@@ -18,11 +18,13 @@
 			if (isset($_GET['id']) && $_GET['id'] % 2 === 0) {
 				sleep(1);
 				header('Location: '.$link . "?q=" . $p[rand(0, $l - 1)]);
+ 				file_put_contents($counter, $c + 1);
 				exit();
 			}
 			if (isset($_GET['q'])) {
 				sleep(1);
 				header('Location: '.$link . "?q=" . $p[rand(0, $l - 1)]);
+ 				file_put_contents($counter, $c + 1);
 				exit();
 			}
 
@@ -36,6 +38,7 @@
 	</head>
 	<body>
 <?php
+			header('Status: 200');
  			for ($i=0; $i < 75000; $i++) {
  				print '<a href="' . $link . "?id=" . ($i + $c) . '">';
 				for ($j = 0; $j < rand(1, 10); ++$j) {
@@ -43,7 +46,7 @@
 				}
 				print '</a> ';
  			}
- 			file_put_contents($counter, $c + 75000);
+ 			file_put_contents($counter, $c + 1);
  		?>	
 	</body>
 </html>
