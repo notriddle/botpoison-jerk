@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang=en>
 	<head>
-		<title>BotPoison</title>
+		<title>My Awesome Page</title>
 		<meta name=viewport content="width=device-width, initial-scale=1.0">
 		<meta name=charset content=utf-8>
 		<meta name=robots content="noindex, nofollow">
@@ -20,10 +20,10 @@
  * https://creativecommons.org/publicdomain/zero/1.0/
  */
  			$link    = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']; //The URL to this page
- 			$counter = "/path/to/counter"      ; //Replace with path to a writable file (set to 0 initially)
+ 			$counter = "counter"      ; //Replace with path to a writable file (set to 0 initially)
  			$c = file_get_contents($counter);
  			for ($i=0; $i < 75000; $i++) {
- 				print '<a href="' . $link . "?id=" . ($i + $c) . '">LINK</a> ';
+ 				print '<a href="' . $link . "?id=" . ($i + $c) . '">L' . $i . '</a> ';
  			}
  			file_put_contents($counter, $c + 75000);
  		?>	
