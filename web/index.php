@@ -18,7 +18,7 @@
 				header('Location: index.php?q='. $p[rand(0, $l - 1)]);
 				exit();
 			}
-			if (isset($_GET['q'])) {
+			if (isset($_GET['q']) && $_GET['q'] != 'a') {
 				sleep(1);
 				header('Location: index.php?q=' . $p[rand(0, $l - 1)]);
 				exit();
