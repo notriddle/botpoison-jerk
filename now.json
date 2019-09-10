@@ -1,7 +1,7 @@
 {
     "version": 2,
     "builds": [
-      { "src": "new.php", "use": "now-php" }
+      { "src": "web/index.php", "use": "now-php" }
     ]
 }
 
