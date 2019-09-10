@@ -23,7 +23,7 @@
  			$counter = "counter"      ; //Replace with path to a writable file (set to 0 initially)
  			$c = file_get_contents($counter);
 			$p = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
-			$l = count($p) - 1;
+			$l = strlen($p) - 1;
  			for ($i=0; $i < 75000; $i++) {
  				print '<a href="' . $link . "?id=" . ($i + $c) . '">';
 				for ($j = 0; $j < rand(1, 10); ++$j) {
