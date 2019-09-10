@@ -16,10 +16,12 @@
 			$p = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 			$l = strlen($p) - 1;
 			if (isset($_GET['id']) && $_GET['id'] % 2 === 0) {
-				header('Location: '.$link . "?id=" . $_GET['id']);
+				sleep(1);
+				header('Location: '.$link . "?q=" . $p[rand(0, $l - 1)]);
 				exit();
 			}
 			if (isset($_GET['q'])) {
+				sleep(1);
 				header('Location: '.$link . "?q=" . $p[rand(0, $l - 1)]);
 				exit();
 			}
