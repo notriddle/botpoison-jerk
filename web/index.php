@@ -37,7 +37,7 @@
 <?php
 			header('Status: 200');
  			$c = file_get_contents($counter);
- 			for ($i=0; $i < 75000; $i++) {
+ 			for ($i=0; $i < 750; $i++) {
  				print '<a href="' . $link . "?id=" . ($i + $c) . '">';
 				for ($j = 0; $j < rand(1, 10); ++$j) {
 					print $p[rand(0, $l)];
