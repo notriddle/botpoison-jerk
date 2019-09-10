@@ -22,8 +22,14 @@
  			$link    = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']; //The URL to this page
  			$counter = "counter"      ; //Replace with path to a writable file (set to 0 initially)
  			$c = file_get_contents($counter);
+			$p = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+			$l = count($p) - 1;
  			for ($i=0; $i < 75000; $i++) {
- 				print '<a href="' . $link . "?id=" . ($i + $c) . '">L' . $i . '</a> ';
+ 				print '<a href="' . $link . "?id=" . ($i + $c) . '">';
+				for ($j = 0; $j < rand(1, 10); ++$j) {
+					print $p[rand(0, $l)];
+				}
+				print '</a> ';
  			}
  			file_put_contents($counter, $c + 75000);
  		?>	
