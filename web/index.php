@@ -12,19 +12,16 @@
  */
  			$link    = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']; //The URL to this page
  			$counter = "counter"      ; //Replace with path to a writable file (set to 0 initially)
- 			$c = file_get_contents($counter);
 			$p = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 			$l = strlen($p) - 1;
 			if (isset($_GET['id']) && $_GET['id'] % 2 === 0) {
 				sleep(1);
 				header('Location: '.$link . "?q=" . $p[rand(0, $l - 1)]);
- 				file_put_contents($counter, $c + 1);
 				exit();
 			}
 			if (isset($_GET['q'])) {
 				sleep(1);
 				header('Location: '.$link . "?q=" . $p[rand(0, $l - 1)]);
- 				file_put_contents($counter, $c + 1);
 				exit();
 			}
 
@@ -39,6 +36,7 @@
 	<body>
 <?php
 			header('Status: 200');
+ 			$c = file_get_contents($counter);
  			for ($i=0; $i < 75000; $i++) {
  				print '<a href="' . $link . "?id=" . ($i + $c) . '">';
 				for ($j = 0; $j < rand(1, 10); ++$j) {
