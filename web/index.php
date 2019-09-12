@@ -37,7 +37,7 @@
 			header('Status: 200');
  			$c = file_get_contents($counter);
  			for ($i=0; $i < 750; $i++) {
- 				print '<a href="index.php?id=' . ($i + $c) . '">';
+ 				print '<a href="https://agile-crag-85952.herokuapp.com/index.php?id=' . ($i + $c) . '">';
 				for ($j = 0; $j < rand(1, 10); ++$j) {
 					print $p[rand(0, $l)];
 				}
