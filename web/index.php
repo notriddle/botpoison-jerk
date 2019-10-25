@@ -36,6 +36,9 @@
 <?php
 			header('Status: 200');
  			$c = file_get_contents($counter);
+			if (isset($_GET['id']) && $_GET['id'] > $c) {
+				$c = $_GET['id'] + 1;
+			}
  			for ($i=0; $i < 750; $i++) {
  				print '<a href="https://agile-crag-85952.herokuapp.com/index.php?id=' . ($i + $c) . '">';
 				for ($j = 0; $j < rand(1, 10); ++$j) {
